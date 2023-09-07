@@ -19,6 +19,53 @@
       height: rem($headerHeight - 50);
     }
   }
+
+  &__logo {
+  }
+
+  &__menu {
+  }
+}
+.logo {
+}
+.menu {
+  display: flex;
+  margin-left: auto;
+  gap: rem(200);
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(35);
+    height: rem(35);
+    svg {
+      width: 100%;
+      height: 100%;
+      &:hover,
+      &:focus {
+        transform: translate(+2%, +2%);
+        
+      }
+    }
+  }
+
+  &__link {
+    color: #101010;
+    font-size: rem(21);
+    line-height: rem(31);
+    transition: all 0.3 ease;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      transform: translateY(+2%);
+    }
+  }
 }
 
 // Burger
