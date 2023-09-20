@@ -2,6 +2,7 @@
   width: 100%;
   transition: background-color var(--bs-transition);
   z-index: 50;
+  position: relative;
 
   .header-is-sticky & {
     // ..стили для липкого хедера
@@ -27,15 +28,46 @@
   }
 }
 .logo {
+  @include media-mx(768) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @include media-mx(425) {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 .menu {
   display: flex;
   margin-left: auto;
   gap: rem(200);
+  @include adaptiveClamp("gap", 200, 50, 1024, 769, 1);
+  @include media-mx(767) {
+    gap: rem(32);
+  }
   &__item {
     display: flex;
     align-items: center;
     gap: rem(16);
+    @include media-mx(768) {
+      gap: rem(10);
+    }
+    &_one {
+      @include media-mx(768) {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include media-mx(425) {
+       
+      }
+    }
+    &_two {
+    }
   }
 
   &__icon {
@@ -50,7 +82,6 @@
       &:hover,
       &:focus {
         transform: translate(+2%, +2%);
-        
       }
     }
   }
@@ -64,6 +95,13 @@
     &:focus {
       text-decoration: underline;
       transform: translateY(+2%);
+    }
+    @include media-mx(768) {
+      font-size: rem(16);
+      line-height: rem(26);
+    }
+    @include media-mx(767) {
+      display: none;
     }
   }
 }

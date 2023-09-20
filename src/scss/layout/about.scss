@@ -10,9 +10,22 @@
   }
 
   &__images {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__image-ibg {
+    width: rem(592);
+    //height: rem(772);
+   
+   //overflow: hidden;
+   //object-fit: cover;
+    &_one{
+      padding-bottom: 55%;
+    }
+    &_two{
+      padding-bottom: 40%;
+    }
   }
 
   &__intro {
