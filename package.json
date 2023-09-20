@@ -1,7 +1,7 @@
 {
-  "name": "gulp-2022-volha",
+  "name": "coat-female-landing",
   "version": "1.7.8",
-  "description": "Сборка Gulp+Webpack+Babel from Volha",
+  "description": "landing page",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
