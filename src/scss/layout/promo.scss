@@ -19,6 +19,7 @@
     //height: 100%;
     //padding-bottom: 50%;
     padding-bottom: rem(900);
+
     z-index: 2;
   }
 
@@ -26,7 +27,6 @@
     background-color: #8a728e;
   }
   &__coat {
-
   }
 }
 
@@ -87,14 +87,20 @@
   }
 }
 .text {
- 
+  position: relative;
   &__container {
+   
     max-width: rem(860);
     padding-top: rem(80);
     padding-bottom: rem(150);
-    @include media-mx(767) {
+    @include media-mx(768) {
       padding-top: rem(60);
       padding-bottom: rem(112);
+    }
+    @include media-mx(425) {
+      padding-top: rem(30);
+      padding-bottom: rem(500);
+      @include adaptiveClamp ("padding-bottom", 500,440,425,320,1);
     }
   }
   &__description {
@@ -104,38 +110,73 @@
     font-size: rem(32);
     font-weight: 400;
     line-height: rem(46);
-    @include media-mx(767) {
+    @include media-mx(768) {
       font-size: rem(28);
       line-height: rem(42);
+      @include adaptiveClamp ("font-size", 28,16,767,425,1);
+      @include adaptiveClamp ("line-height", 42,26,767,425,1);
+    }
+    @include media-mx(425) {
+     
+      padding-bottom: rem(30);
     }
   }
 }
 
 .coat {
-  
   //position: relative;
-  
-		&__container {
-      
-      padding-bottom: rem(114);
-      @include media-mx (767){
-        padding-bottom: rem(36);
-		}
-  }
-		&__photos {
-     
-      display: flex;
-      gap: rem(12);
-      //position: absolute;
-      //top: -36px;
-      //left:50%;
-      //transform: translate(-50%);
-		}
 
-		&__image-ibg {
+  &__container {
+    
+    padding-bottom: rem(114);
+    @include media-mx(768) {
+      padding-bottom: rem(36);
+    }
+    @include media-mx(425) {
+      padding-bottom: rem(0);
+    }
+  }
+  &__photos {
+    display: flex;
+    gap: rem(12);
+    position: relative;
+    top: -36px;
+    left:50%;
+    transform: translate(-50%);
+    @include media-mx(425) {
+     top: 68%;
+     position: absolute;
+     left:50%;
+     transform: translate(-50%);
+    // display: block;
+    // flex: 1 0 400px;
+    // top:-500px;
+    }
+  }
+
+  &__image-ibg {
+    width: rem(400);
+    //height: rem(460);
+    padding-bottom: 38%;
+    &_one{
+      @include media-mx(425) {
+        padding-bottom: 110%;
+       //max-width: rem(400);
+       
+      //margin: 0 auto;
+      }
+     
+    }
+    &_two{
+      @include media-mx(425) {
+        display: none;
+      }
       
-      width: rem(400);
-      //height: rem(460);
-      padding-bottom: 38%;
-		}
+    }
+    &_three {
+      @include media-mx(425) {
+        display: none;
+      }
+    }
+  }
 }
